@@ -1,5 +1,5 @@
 {
-  "name": "@byub-events/cli",
+  "name": "@byub/cli",
   "version": "0.1.0",
   "description": "",
   "bin": "bin/cli.js",
