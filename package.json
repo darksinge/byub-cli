@@ -1,0 +1,21 @@
+{
+  "name": "@byub-events/cli",
+  "version": "0.1.0",
+  "description": "",
+  "bin": "bin/cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/yargs": "^17.0.8",
+    "standard": "^16.0.4"
+  },
+  "dependencies": {
+    "js-yaml": "4.1.0",
+    "js-yaml-cloudformation-schema": "1.0.0",
+    "yargs": "17.3.1"
+  }
+}

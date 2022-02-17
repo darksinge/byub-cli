@@ -1,0 +1,29 @@
+Resources:
+  __PLACEHOLDER__EventSchema:
+    Type: AWS::EventSchemas::Schema
+    Properties:
+      RegistryName: ${cf:regionbase.Platform5EventSchemaRegistryName}
+      SchemaName: '${self:service}@__PLACEHOLDER__'
+      Type: OpenApi3
+      Content: >
+        {
+        }
+
+  __PLACEHOLDER__LogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties: 
+      LogGroupName: '/aws/events/${self:service}-__PLACEHOLDER__-catchall'
+      RetentionInDays: 14
+
+  __PLACEHOLDER__CatchAllRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Description: Catch all rule to send events to CloudWatch.
+      EventBusName: ${cf:regionbase.BYUBEventBusName}
+      Name: ${self:service}-__PLACEHOLDER__-catchall
+      Targets:
+        - Arn: !GetAtt __PLACEHOLDER__LogGroup.Arn
+          Id: ${self:service}-__PLACEHOLDER__-catchall-rule
+      EventPattern:
+        source:
+          - ${self:service}
